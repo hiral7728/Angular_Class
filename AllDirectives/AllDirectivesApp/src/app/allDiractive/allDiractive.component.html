@@ -2,3 +2,7 @@
 <div *ngIf="courses.length > 0; then listCourse; else noCourse"></div>
 <ng-template #listCourse>List of Course</ng-template>
 <ng-template #noCourse>No Course</ng-template>
+
+<!-- hidden directive -->
+<div [hidden]="movies.length == 0">List of Movies</div>
+<div [hidden]="movies.length > 0">No Movies</div>
