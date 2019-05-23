@@ -21,10 +21,19 @@
       <a (click)="viewMode = 'list'">List View</a>
     </li>
   </ul>
+  <br />
   <div [ngSwitch]="viewMode">
     <div *ngSwitchCase="'map'">Map View Content</div>
     <div *ngSwitchCase="'list'">List View Content</div>
     <div *ngSwitchDefault>Somethig else</div>
   </div>
   <br />
+  <br />
+  <!-- ngSwitch directive -->
+  <p>List of Students</p>
+  <ul class="list-group">
+    <li *ngFor="let std of students" class="list-group-item w-25">
+      {{ std.id }} -- {{ std.name }}
+    </li>
+  </ul>
 </div>
