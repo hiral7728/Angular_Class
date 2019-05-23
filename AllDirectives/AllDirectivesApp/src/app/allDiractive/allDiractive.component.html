@@ -1,8 +1,30 @@
-<!-- ngIf directive -->
-<div *ngIf="courses.length > 0; then listCourse; else noCourse"></div>
-<ng-template #listCourse>List of Course</ng-template>
-<ng-template #noCourse>No Course</ng-template>
+<div class="ml-3">
+  <!-- ngIf directive -->
+  <br />
+  <div *ngIf="courses.length > 0; then listCourse; else noCourse"></div>
+  <ng-template #listCourse>List of Course</ng-template>
+  <ng-template #noCourse>No Course</ng-template>
+  <br />
+  <!-- hidden directive -->
+  <br />
+  <div [hidden]="movies.length == 0">List of Movies</div>
 
-<!-- hidden directive -->
-<div [hidden]="movies.length == 0">List of Movies</div>
-<div [hidden]="movies.length > 0">No Movies</div>
+  <div [hidden]="movies.length > 0">No Movies</div>
+  <br />
+  <!-- ngSwitch directive -->
+  <br />
+  <ul class="nav nav-pills">
+    <li [class.active]="viewMode == 'map'" class="btn btn-primary btn-lg mr-3 ">
+      <a (click)="viewMode = 'map'">Map View</a>
+    </li>
+    <li class="btn btn-primary btn-lg " [class.active]="viewMode == 'list'">
+      <a (click)="viewMode = 'list'">List View</a>
+    </li>
+  </ul>
+  <div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchDefault>Somethig else</div>
+  </div>
+  <br />
+</div>

@@ -9,5 +9,6 @@ export class AllDiractiveComponent implements OnInit {
   constructor() {}
   courses = [1, 2, 3];
   movies = [1, 2, 3];
+  viewMode = "map";
   ngOnInit() {}
 }
