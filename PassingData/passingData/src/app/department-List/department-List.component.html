@@ -1,0 +1,13 @@
+<p>
+  Department List
+</p>
+<ul class="list-group">
+  <li
+    (click)="onSelect(dep)"
+    class="list-group-item list-group-item-primary w-25"
+    *ngFor="let dep of departments"
+  >
+    <span class="badge badge-info mr-2 ">{{ dep.id }}</span
+    >{{ dep.name }}
+  </li>
+</ul>
